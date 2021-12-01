@@ -23,15 +23,16 @@ export default function AddItem({ listContainer, setListContainer }) {
                         color='primary'
                     />
                 </div>
-                <div className='Teal'>
-                    <Button
-                        id='submit-item'
-                        type='submit'
-                        onClick={addItemToListContainer}
-                    >
-                        Add Item
-                    </Button>
-                </div>
+                <Button
+                    className='Button'
+                    id='submit-item'
+                    type='submit'
+                    onClick={addItemToListContainer}
+                    variant='contained'
+                    color='secondary'
+                >
+                    Add Item
+                </Button>
             </div>
         </form>
     );

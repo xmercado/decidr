@@ -8,14 +8,14 @@ export default function SelectItem({ listContainer, setListContainer, setSelecte
     }
 
     return (
-        <div className='Pink'>
-            <Button
-                id='select-item'
-                onClick={selectRandomItem}
-            >
-                Decide!
-            </Button>
-        </div>
-
+        <Button
+            className='Button'
+            id='select-item'
+            onClick={selectRandomItem}
+            variant='contained'
+            color='primary'
+        >
+            Decide!
+        </Button>
     );
 }

@@ -15,7 +15,10 @@ export default function ItemList({ listContainer, setListContainer, selectedItem
             <p>
                 {item}
             </p>
-            <div onClick={() => deleteItem()}>
+            <div 
+                className='ListDelete'
+                onClick={() => deleteItem()}
+            >
                 <DeleteIcon />
             </div>
         </div>
@@ -23,7 +26,7 @@ export default function ItemList({ listContainer, setListContainer, selectedItem
     );
 
     return (
-        <div>
+        <div className='List'>
             {displayListContainer}
         </div>
     );

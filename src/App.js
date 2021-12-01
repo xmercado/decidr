@@ -24,12 +24,18 @@ function App() {
         <div className='Result'>
           <p>Your decision is </p>
           <p>{selectedItem}</p>
-          <div className='Pink'>
+          <SelectItem 
+              listContainer={listContainer}
+              setListContainer={setListContainer}
+              setSelectedItem={setSelectedItem}/>
+          <div className='Button'>
             <Button
-              id='decide-again'
+              id='back'
               onClick={() => clearState()}
+              variant='contained'
+              color='secondary'
             >
-              Decide again
+              Back
             </Button>
           </div>
         </div>
@@ -42,14 +48,14 @@ function App() {
             setSelectedItem={setSelectedItem}
           />
           <div>
-            <AddItem 
-              listContainer={listContainer}
-              setListContainer={setListContainer}
-            />
             <SelectItem 
               listContainer={listContainer}
               setListContainer={setListContainer}
               setSelectedItem={setSelectedItem}/>
+            <AddItem 
+              listContainer={listContainer}
+              setListContainer={setListContainer}
+            />
           </div>
         </>
       }
