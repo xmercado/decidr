@@ -35,8 +35,6 @@
   height: 100vh;
 }
 
-/***********************************************/
-
 .App {
   text-align: center;
   color: white;
@@ -46,6 +44,8 @@
   justify-content: space-between;
   height: 100vh;
 }
+
+/***********************************************/
 
 .App-logo {
   height: 40vmin;
