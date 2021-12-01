@@ -3,28 +3,39 @@
   width: 100%;
 }
 
-.Pink {
-  background-color: #BB86FC;
-}
-
-.Teal {
-  background-color: #03DAC6;
+.List {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+  width: 377px;
+  word-break: break-all;
+  overflow: auto;
 }
 
 .ListItem {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 100vw;
+  justify-content: space-between;
+  max-width: 377px;
+  width: 100%;
 }
 
-.AddItemInput {
-  background-color: white;
+.ListDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .AddItem {
   display: flex;
   flex-direction: row;
+  padding: 20px;
+}
+
+.AddItemInput {
+  background-color: white;
 }
 
 .Result {
@@ -33,6 +44,10 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+.Button {
+  padding: 20px;
 }
 
 .App {

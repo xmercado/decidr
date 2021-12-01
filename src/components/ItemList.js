@@ -3,8 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function ItemList({ listContainer, setListContainer, selectedItem, setSelectedItem}) {
     const deleteItem = () => {
-        setListContainer(listContainer.filter((value, index) => index !== selectedItem));
-        setSelectedItem('');
+        setListContainer(listContainer.filter((value, index) => index !== value));
     }
 
     const displayListContainer = listContainer.map((item, index) => (
@@ -15,12 +14,12 @@ export default function ItemList({ listContainer, setListContainer, selectedItem
             <p>
                 {item}
             </p>
-            <div 
-                className='ListDelete'
-                onClick={() => deleteItem()}
-            >
-                <DeleteIcon />
-            </div>
+                <div 
+                    className='ListDelete'
+                    onClick={() => deleteItem()}
+                >
+                    <DeleteIcon />
+                </div>
         </div>
         )
     );
