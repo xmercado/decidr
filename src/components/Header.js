@@ -1,6 +1,8 @@
+import '../App.css';
+
 export default function Header() {
     return (
-        <header>
+        <header className='Header'>
             decidr
         </header>
     );
