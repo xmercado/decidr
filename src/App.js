@@ -7,6 +7,9 @@ import ItemList from './components/ItemList';
 
 function App() {
   const [listContainer, setListContainer] = useState([]);
+  const [selectedItem, setSelectedItem] = useState('');
+
+  console.log('Selected item ', selectedItem);
 
   return (
     <div className="App">
@@ -14,12 +17,19 @@ function App() {
       <ItemList
         listContainer={listContainer}
         setListContainer={setListContainer}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
       />
-      <AddItem 
-        listContainer={listContainer}
-        setListContainer={setListContainer}
-      />
-      <SelectItem />
+      <div>
+        <AddItem 
+          listContainer={listContainer}
+          setListContainer={setListContainer}
+        />
+        <SelectItem 
+          listContainer={listContainer}
+          setListContainer={setListContainer}
+          setSelectedItem={setSelectedItem}/>
+      </div>
     </div>
   );
 }
