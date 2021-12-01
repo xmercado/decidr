@@ -1,7 +1,42 @@
+.Header {
+  background-color: #BB86FC;
+  width: 100%;
+}
+
+.Pink {
+  background-color: #BB86FC;
+}
+
+.Teal {
+  background-color: #03DAC6;
+}
+
+.ListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+}
+
+.AddItemInput {
+  background-color: white;
+}
+
+.AddItem {
+  display: flex;
+  flex-direction: row;
+}
+
+/***********************************************/
+
 .App {
   text-align: center;
-  background-color: #282c34;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .App-logo {
