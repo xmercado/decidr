@@ -1,9 +1,9 @@
 import React from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function ItemList({ listContainer, setListContainer, selectedItem, setSelectedItem}) {
-    const deleteItem = () => {
-        setListContainer(listContainer.filter((value, index) => index !== value));
+export default function ItemList({ listContainer, setListContainer}) {
+    const deleteItem = (i) => {
+        setListContainer(listContainer.filter((value, index) => index !== i));
     }
 
     const displayListContainer = listContainer.map((item, index) => (
@@ -16,7 +16,7 @@ export default function ItemList({ listContainer, setListContainer, selectedItem
             </p>
                 <div 
                     className='ListDelete'
-                    onClick={() => deleteItem()}
+                    onClick={() => deleteItem(index)}
                 >
                     <DeleteIcon />
                 </div>

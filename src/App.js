@@ -44,14 +44,21 @@ function App() {
           <ItemList
             listContainer={listContainer}
             setListContainer={setListContainer}
-            selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
           />
           <div>
             <SelectItem 
               listContainer={listContainer}
               setListContainer={setListContainer}
               setSelectedItem={setSelectedItem}/>
+            <Button
+              style={{marginLeft: 10}}
+              id='back'
+              onClick={() => setListContainer([])}
+              variant='outlined'
+              color='secondary'
+            >
+              Clear list
+            </Button>
             <AddItem 
               listContainer={listContainer}
               setListContainer={setListContainer}
