@@ -1,6 +1,11 @@
 .Header {
-  background-color: #BB86FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
+  height: 5vh;
+  background-color: #BB86FC;
 }
 
 .List {
