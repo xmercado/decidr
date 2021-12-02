@@ -6,7 +6,7 @@ export default function ItemList({ listContainer, setListContainer}) {
         setListContainer(listContainer.filter((value, index) => index !== i));
     }
 
-    const displayListContainer = listContainer.map((item, index) => (
+    const displayList = listContainer.map((item, index) => (
         <div
             className='ListItem'
             key={index}
@@ -26,7 +26,15 @@ export default function ItemList({ listContainer, setListContainer}) {
 
     return (
         <div className='List'>
-            {displayListContainer}
+            {
+                listContainer.length == 0
+                ?
+                    <div>
+                        <p>Add some items to the list.</p>
+                    </div>
+                :
+                    displayList
+            }
         </div>
     );
 }
