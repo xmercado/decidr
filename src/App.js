@@ -54,7 +54,7 @@ function App() {
                   style={{marginLeft: 10}}
                   id='back'
                   onClick={() => setListContainer([])}
-                  variant='outlined'
+                  variant='contained'
                   color='secondary'
                 >
                   Clear list
