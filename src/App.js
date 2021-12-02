@@ -46,6 +46,7 @@ function App() {
                 setListContainer={setListContainer}
               />
               <div>
+                <p>{listContainer.length} items in list</p>
                 <SelectItem 
                   listContainer={listContainer}
                   setListContainer={setListContainer}
