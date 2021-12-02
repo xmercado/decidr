@@ -19,53 +19,53 @@ function App() {
     <div className='App'>
       <Header />
       {
-      selectedItem.length > 0
-        ?
-        <div className='Result'>
-          <p>Your decision is </p>
-          <p>{selectedItem}</p>
-          <SelectItem 
-              listContainer={listContainer}
-              setListContainer={setListContainer}
-              setSelectedItem={setSelectedItem}/>
-          <div className='Button'>
-            <Button
-              id='back'
-              onClick={() => clearState()}
-              variant='contained'
-              color='secondary'
-            >
-              Back
-            </Button>
-          </div>
-        </div>
-        :
-        <>
-          <ItemList
-            listContainer={listContainer}
-            setListContainer={setListContainer}
-          />
-          <div>
-            <SelectItem 
-              listContainer={listContainer}
-              setListContainer={setListContainer}
-              setSelectedItem={setSelectedItem}/>
-            <Button
-              style={{marginLeft: 10}}
-              id='back'
-              onClick={() => setListContainer([])}
-              variant='outlined'
-              color='secondary'
-            >
-              Clear list
-            </Button>
-            <AddItem 
-              listContainer={listContainer}
-              setListContainer={setListContainer}
-            />
-          </div>
-        </>
-      }
+        selectedItem.length > 0
+          ?
+            <div className='Result'>
+              <p>Your decision is </p>
+              <p>{selectedItem}</p>
+              <SelectItem 
+                  listContainer={listContainer}
+                  setListContainer={setListContainer}
+                  setSelectedItem={setSelectedItem}/>
+              <div className='Button'>
+                <Button
+                  id='back'
+                  onClick={() => clearState()}
+                  variant='contained'
+                  color='secondary'
+                >
+                  Back
+                </Button>
+              </div>
+            </div>
+          :
+            <>
+              <ItemList
+                listContainer={listContainer}
+                setListContainer={setListContainer}
+              />
+              <div>
+                <SelectItem 
+                  listContainer={listContainer}
+                  setListContainer={setListContainer}
+                  setSelectedItem={setSelectedItem}/>
+                <Button
+                  style={{marginLeft: 10}}
+                  id='back'
+                  onClick={() => setListContainer([])}
+                  variant='outlined'
+                  color='secondary'
+                >
+                  Clear list
+                </Button>
+                <AddItem 
+                  listContainer={listContainer}
+                  setListContainer={setListContainer}
+                />
+              </div>
+            </>
+        }
     </div>
   );
 }
