@@ -38,6 +38,19 @@
   background-color: white;
 }
 
+.Modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ModalBox {
+  text-align: center;
+  width: 20vw;
+  background-color: white;
+  box-shadow: 12px 12px;
+}
+
 .Result {
   display: flex;
   flex-direction: column;

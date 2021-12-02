@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
+import { Modal } from '@mui/material';
+import { Box } from '@mui/system';
 import Header from './components/Header';
 import AddItem from './components/AddItem';
 import SelectItem from './components/SelectItem';
@@ -9,10 +11,16 @@ import ItemList from './components/ItemList';
 function App() {
   const [listContainer, setListContainer] = useState([]);
   const [selectedItem, setSelectedItem] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   const clearState = () => {
     setListContainer([]);
     setSelectedItem('');
+  }
+
+  const clearList = () => {
+    setListContainer([]);
+    setShowModal(false);
   }
 
   return (
@@ -45,8 +53,40 @@ function App() {
                 listContainer={listContainer}
                 setListContainer={setListContainer}
               />
+              { showModal &&
+                <Modal
+                  className='Modal'
+                  open={showModal}
+                  onClose={() => setShowModal(false)}
+                >
+                  <Box className='ModalBox'>
+                    <p>Clear list?</p>
+                    <Button
+                      onClick={() => clearList()}
+                      color='primary'
+                    >
+                      Yes
+                    </Button>
+                    <Button
+                      onClick={() => setShowModal(false)}
+                    >
+                      No
+                    </Button>
+                  </Box>
+                </Modal>
+              }
+
               <div>
-                <p>{listContainer.length} items in list</p>
+                <p>
+                  {listContainer.length}
+                  {
+                    listContainer.length === 1
+                    ?
+                      ' item in list'
+                    :
+                      ' items in list'
+                  }
+                </p>
                 <SelectItem 
                   listContainer={listContainer}
                   setListContainer={setListContainer}
@@ -54,7 +94,7 @@ function App() {
                 <Button
                   style={{marginLeft: 10}}
                   id='back'
-                  onClick={() => setListContainer([])}
+                  onClick={() => setShowModal(true)}
                   variant='contained'
                   color='secondary'
                 >
