@@ -1,7 +1,7 @@
 import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function ItemList({ listContainer, setListContainer}) {
+export default function ItemList({ listContainer, setListContainer }) {
     const deleteItem = (i) => {
         setListContainer(listContainer.filter((value, index) => index !== i));
     }
