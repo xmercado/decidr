@@ -1,27 +1,18 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
-import { Modal } from '@mui/material';
-import { Box } from '@mui/system';
 import Header from './components/Header';
 import AddItem from './components/AddItem';
 import SelectItem from './components/SelectItem';
 import ItemList from './components/ItemList';
+import ClearButton from './components/ClearButton';
+import ClearModal from './components/ClearModal';
+import Result from './components/Result';
+import ItemCount from './components/ItemCount';
 
 function App() {
   const [listContainer, setListContainer] = useState([]);
   const [selectedItem, setSelectedItem] = useState('');
   const [showModal, setShowModal] = useState(false);
-
-  const clearState = () => {
-    setListContainer([]);
-    setSelectedItem('');
-  }
-
-  const clearList = () => {
-    setListContainer([]);
-    setShowModal(false);
-  }
 
   return (
     <div className='App'>
@@ -29,24 +20,12 @@ function App() {
       {
         selectedItem.length > 0
           ?
-            <div className='Result'>
-              <p>Your decision is </p>
-              <p>{selectedItem}</p>
-              <SelectItem 
-                  listContainer={listContainer}
-                  setListContainer={setListContainer}
-                  setSelectedItem={setSelectedItem}/>
-              <div className='Button'>
-                <Button
-                  id='back'
-                  onClick={() => clearState()}
-                  variant='contained'
-                  color='secondary'
-                >
-                  Back
-                </Button>
-              </div>
-            </div>
+            <Result 
+              listContainer={listContainer}
+              setListContainer={setListContainer}
+              selectedItem={selectedItem}
+              setSelectedItem={setSelectedItem}
+            />
           :
             <>
               <ItemList
@@ -54,52 +33,24 @@ function App() {
                 setListContainer={setListContainer}
               />
               { showModal &&
-                <Modal
-                  className='Modal'
-                  open={showModal}
-                  onClose={() => setShowModal(false)}
-                >
-                  <Box className='ModalBox'>
-                    <p>Clear list?</p>
-                    <Button
-                      onClick={() => clearList()}
-                      color='primary'
-                    >
-                      Yes
-                    </Button>
-                    <Button
-                      onClick={() => setShowModal(false)}
-                    >
-                      No
-                    </Button>
-                  </Box>
-                </Modal>
+                <ClearModal
+                  setListContainer={setListContainer}
+                  showModal={showModal}
+                  setShowModal={setShowModal}
+                />
               }
-
               <div>
-                <p>
-                  {listContainer.length}
-                  {
-                    listContainer.length === 1
-                    ?
-                      ' item in list'
-                    :
-                      ' items in list'
-                  }
-                </p>
+                <ItemCount
+                  listContainer={listContainer}
+                />
                 <SelectItem 
                   listContainer={listContainer}
                   setListContainer={setListContainer}
-                  setSelectedItem={setSelectedItem}/>
-                <Button
-                  style={{marginLeft: 10}}
-                  id='back'
-                  onClick={() => setShowModal(true)}
-                  variant='contained'
-                  color='secondary'
-                >
-                  Clear list
-                </Button>
+                  setSelectedItem={setSelectedItem}
+                />
+                <ClearButton
+                  setShowModal={setShowModal}
+                />
                 <AddItem 
                   listContainer={listContainer}
                   setListContainer={setListContainer}
