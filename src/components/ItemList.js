@@ -27,7 +27,7 @@ export default function ItemList({ listContainer, setListContainer}) {
     return (
         <div className='List'>
             {
-                listContainer.length == 0
+                listContainer.length === 0
                 ?
                     <div>
                         <p>Add some items to the list.</p>
