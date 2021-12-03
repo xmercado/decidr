@@ -16,7 +16,7 @@ export default function AddItem({ listContainer, setListContainer }) {
 
     const checkDuplicate = () => {
         const cleanInput = newItem.trim().toLowerCase();
-        if (listContainer.every((item) => item !== cleanInput)) {
+        if (listContainer.every((item) => item.toLowerCase() !== cleanInput)) {
             return true;
         }
         return false;
