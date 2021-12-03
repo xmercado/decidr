@@ -43,14 +43,18 @@ function App() {
                 <ItemCount
                   listContainer={listContainer}
                 />
-                <SelectItem 
-                  listContainer={listContainer}
-                  setListContainer={setListContainer}
-                  setSelectedItem={setSelectedItem}
-                />
-                <ClearButton
-                  setShowModal={setShowModal}
-                />
+                { listContainer.length > 0 &&
+                  <>
+                    <SelectItem 
+                      listContainer={listContainer}
+                      setListContainer={setListContainer}
+                      setSelectedItem={setSelectedItem}
+                    />
+                    <ClearButton
+                      setShowModal={setShowModal}
+                    />
+                  </>
+                }
                 <AddItem 
                   listContainer={listContainer}
                   setListContainer={setListContainer}
