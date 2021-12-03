@@ -8,6 +8,11 @@
   background-color: #BB86FC;
 }
 
+.Signature {
+  color: white;
+  text-decoration: none;
+}
+
 .List {
   display: flex;
   flex-direction: column;
